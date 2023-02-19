@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+  <title>Sign in</title>
+</head>
+<body>
+<div  class="container" style="width: 30%; padding-top: 100px">
+  <form th:action="@{/auth/signin}" th:method="post" th:object="${person}" name="f">
+    <div class="container" style="width: 90%">
+      <div class="form-row">
+        <div class="col">
+          <label for="username">Enter username: </label>
+          <input class="form-control" th:field="*{username}" type="text" name="username" id="username">
+          <span style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"/>
+        </div>
+        <div class="col">
+          <label for="password">Enter password: </label>
+          <input class="form-control" th:field="*{password}" type="password" name="password" id="password">
+          <span style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="yearOfBirthday">Enter date of birthday: </label>
+        <input class="form-control" th:field="*{dateOfBirth}" type="text" name="yearOfBirthday" id="yearOfBirthday">
+        <div style="color:red" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"/>
+      </div>
+      <div class="container" style="padding-top: 10px; display: flex; justify-content:space-between">
+        <input class="btn btn-success" type="submit" name="login" id="login" value="Sign in">
+        <a class="btn btn-secondary " role="button" th:href="@{/auth/login}">Log in</a>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
