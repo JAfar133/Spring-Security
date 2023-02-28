@@ -1,25 +1,20 @@
 package net.golovach.firstspringsecurityapp.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
-import net.golovach.firstspringsecurityapp.DTO.PersonDTO;
 import net.golovach.firstspringsecurityapp.models.Person;
 import net.golovach.firstspringsecurityapp.models.Role;
 import net.golovach.firstspringsecurityapp.security.PersonDetails;
 import net.golovach.firstspringsecurityapp.services.PersonService;
 import net.golovach.firstspringsecurityapp.services.WeatherAPIService;
-import net.golovach.firstspringsecurityapp.util.APIErrorResponse;
 import net.golovach.firstspringsecurityapp.util.DontExistCityException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Collections;
 
@@ -97,13 +92,5 @@ public class FController {
 
         return "errorPage/error_page";
     }
-
-    private Person convertToPerson(PersonDTO personDTO){
-        return modelMapper.map(personDTO,Person.class);
-    }
-    private PersonDTO convertToPersonDTO(Person person){
-        return modelMapper.map(person,PersonDTO.class);
-    }
-
 
 }

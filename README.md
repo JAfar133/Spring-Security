@@ -9,7 +9,7 @@ Educational Spring Security app with roles
 - Spring JPA
 - Spring Secutiry
 - Thymeleaf
-- Bootstrap
+- Bootstrapq
 - Spring Validation
 - Open Weather API
 - Yandex Maps API
