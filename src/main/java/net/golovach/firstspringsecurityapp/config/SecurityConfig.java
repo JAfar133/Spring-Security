@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 // предоставление разрешения на каждый запрос для конечной точки /auth/login
-                .requestMatchers("/auth/login","/auth/signin","/error").permitAll()
+                .requestMatchers("/auth/login","/auth/signin","/error","/guest_page/**").permitAll()
                 .anyRequest().hasAnyRole("USER","ADMIN")
                 .and()
                 .formLogin().loginPage("/auth/login")

@@ -1,12 +1,16 @@
 package net.golovach.firstspringsecurityapp.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import net.golovach.firstspringsecurityapp.models.Person;
+import net.golovach.firstspringsecurityapp.models.Role;
 import net.golovach.firstspringsecurityapp.services.PersonDetailsService;
 import net.golovach.firstspringsecurityapp.services.PersonService;
 import net.golovach.firstspringsecurityapp.validators.PersonValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,4 +52,13 @@ public class AuthController {
         personService.savePerson(person);
         return "redirect:/hello";
     }
+//    @PostMapping("/guest")
+//    public String guest(){
+//        Person person = new Person();
+//        person.setRole(Role.ROLE_GUEST);
+//        person.setUsername("guest123");
+//        personService.savePerson(person);
+//        return "redirect:/guest_page";
+//    }
+
 }

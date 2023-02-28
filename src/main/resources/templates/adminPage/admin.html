@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="width:50%">
       <h1 th:text="${'hello ' + admin.username}"></h1>
       <table class="table">
           <thead>
@@ -21,7 +21,7 @@
                   <th>Username</th>
                   <th>Date of birthday</th>
                   <th>Role</th>
-                  <th>Action</th>
+                  <th style="">Action</th>
               </tr>
           </thead>
           <tbody>
@@ -31,7 +31,7 @@
                   <td th:text="${person.dateOfBirth}"></td>
                   <td th:text="${person.role}"></td>
                   <td>
-                      <div style="display: flex; flex-direction: row" class="container" th:if="${person.role==T(net.golovach.firstspringsecurityapp.models.Role).ROLE_USER}">
+                      <div style="display: flex; flex-direction: row; justify-content: space-around" class="container" th:if="${person.role==T(net.golovach.firstspringsecurityapp.models.Role).ROLE_USER}">
                           <form  th:action="@{/admin/{username}/make_admin/{id}(id=${person.id},username=${admin.username})}" th:method="patch">
                               <input class="btn btn-warning" style="width: 120px; margin-right: 10px" type="submit" value="Make admin"/>
                           </form>
