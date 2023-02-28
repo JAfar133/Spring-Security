@@ -13,3 +13,11 @@ Educational Spring Security app with roles
 - Spring Validation
 - Open Weather API
 - Yandex Maps API
+
+![image](https://user-images.githubusercontent.com/44347128/221907542-2a23c8d1-6502-4e01-a2c1-e3031af962a1.png)
+
+![image](https://user-images.githubusercontent.com/44347128/221907588-3047b6ba-6e64-45c1-957b-db2aaf929e9b.png)
+
+![image](https://user-images.githubusercontent.com/44347128/221907156-f8a6dc4b-a520-46bb-86dd-3ae984e0eb2e.png)
+
+![image](https://user-images.githubusercontent.com/44347128/221907684-8f2e1468-41b6-45cc-b3c2-7906dd71f6cb.png)
